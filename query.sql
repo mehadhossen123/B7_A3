@@ -100,3 +100,13 @@ select * from users where full_name ilike('tanvir%') or full_name ilike('%Haque%
 select booking_id,user_id,match_id,seat_number,
   coalesce(payment_status,'Action required')as payment_status ,total_cost from 
   bookings where payment_status is null;
+
+
+
+  --Query 4: Retrieve match booking details along with the User's full name 
+ -- and the scheduled Match fixture teams.
+
+  select booking_id, full_name,fixture,total_cost
+  from users inner join bookings on 
+  users.user_id=bookings.user_id 
+  inner join matches on bookings.match_id=matches.match_id;
