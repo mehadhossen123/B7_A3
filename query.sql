@@ -79,6 +79,13 @@ INSERT INTO Bookings ( user_id, match_id, seat_number, payment_status, total_cos
 ( 2, 1, NULL, NULL, 150.00),
 ( 3, 2, 'C-20', 'Pending', 120.00);
 
+-- Start from all query 
+
+--Query 1: Retrieve all upcoming football matches belonging to the 'Champions League'
+--where the match status is 'Available'.
+
+select * from matches where match_status='Available' and tournament_category='Champions League';
+
 
 
 
