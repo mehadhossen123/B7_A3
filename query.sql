@@ -130,3 +130,11 @@ select users.user_id,  full_name,booking_id
 select avg(total_cost)  from bookings 
 select booking_id,match_id,total_cost from bookings where total_cost > 
   (select avg(total_cost)  from bookings);
+
+
+
+--Query 7: Retrieve the top 2 most expensive matches sorted by base ticket price, 
+ -- skipping the absolute highest premium match.
+
+select match_id,fixture,base_ticket_price from matches order by
+ base_ticket_price desc limit 2 offset 1
