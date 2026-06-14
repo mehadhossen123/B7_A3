@@ -88,4 +88,6 @@ select * from matches where match_status='Available' and tournament_category='Ch
 
 
 
-
+--Query 2: Search for all users whose full names start with 'Tanvir' or contain the phrase 'Haque'
+  --(case-insensitive).
+select * from users where full_name ilike('tanvir%') or full_name ilike('%Haque%') ;
